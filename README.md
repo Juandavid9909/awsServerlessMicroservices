@@ -110,3 +110,21 @@ callback(Error error, Object result);
 - Administrar la conexión de base de datos con un proxy. Persistir el estado externamente.
 - Configurar la función con **Resource-based policy**. Esto da permisos para invocar nuestra función Lambda. Los roles de ejecución definen los permisos de una función para interactuar con recursos.
 - Usar variables de entornos para almacenar secretos de forma segura y ajustar el comportamiento de la función sin actualizar el código.
+
+
+# API Gateway
+
+- Servicio completamente administrador por los desarrolladores para crear, publicar, mantener, monitorear y asegurar APIs en cualquier escala.
+- Primera puerta para las aplicaciones para acceder a datos, lógica de negocios desde nuestros servicios backend.
+- Podemos crear APIs RESTful y APIs WebSocket.
+- Las APIs RESTful exponen endpoints HTTP del backend, funciones Lambda o incluso otros servicios de AWS. Están optimizadas para cargas de trabajo serverless y para backends HTTP usando APIs HTTP.
+- Las APIs WebSocket son de comunicación en 2 sentidos en tiempo real.
+
+
+## Arquitectura
+
+- Provee a nuestros clientes una experiencia de desarrollo integrada y consistente.
+- Maneja tareas en cientos de miles de llamados API concurrentes aceptando y procesando.
+- Mecanismos de autenticación flexibles, soporta protocolos OAuth2 y OpenID.
+- Despliegues con release Canary para rolling outs seguros.
+- Sistemas de logs y monitoreo con CloudTrail y CloudWatch en uso de API y cambios de la misma.
