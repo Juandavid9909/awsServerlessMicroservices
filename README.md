@@ -128,3 +128,65 @@ callback(Error error, Object result);
 - Mecanismos de autenticación flexibles, soporta protocolos OAuth2 y OpenID.
 - Despliegues con release Canary para rolling outs seguros.
 - Sistemas de logs y monitoreo con CloudTrail y CloudWatch en uso de API y cambios de la misma.
+
+
+# IaC
+
+- Es el proceso de provisionar o administrar infraestructura definida a través de código.
+- Esto permite a los usuarios editar y distribuir configuraciones fácilmente, podemos crear configuraciones de infraestructura reproducible.
+- Es un proceso que automatiza el aprovisionamiento y administración de recursos en la nube.
+
+
+## Ventajas
+
+- Velocidad, ya que evita la intervención manual, por lo que los despliegues de infraestructura con rápidos y seguros.
+- Consistencia, porque podemos desplegar infraestructura identifica a través del portal, evitando tener que configurar cada una sin ser necesario.
+- Reusabilidad, porque hace fácil el reuso de módulos.
+- Costo reducido, ya que permite tener máquinas virtuales administradas de forma programada.
+
+
+# CloudFormation
+
+- Modela, provisiona y administra recursos AWS usando IaC.
+- Plataforma de automatización de infraestructura de AWS que despliega recursos AWS en una manera repetitiba, testeable y fácil de auditar.
+- Usa archivos de plantilla para automatizar el setup de los recursos.
+- Nos permite crear y aprovisionar despliegues de infraestructura AWS predecible y repetitiva.
+
+
+# Cloud Development Kit (CDK)
+
+- Framework de desarrollo de software de código abierto para definir nuestros recursos en la nube usando un lenguaje de programación familiar.
+- Usa el poder de la familiaridad y expresividad  de la programación para modelar nuestras aplicaciones.
+- Provee componentes de alto nivel llamados constructores que preconfiguran los recursos en la nube.
+- Provee una librería de constructores en muchos lenguajes de programación para automatizar fácilmente infraestructura de AWS.
+- Aprovisiona nuestros recursos en una manera segura y repetible a través de CloudFormation.
+- Soporta TypeScript, JavaScript, Python, Java, Go y C#.
+
+
+## Conceptos clave
+
+### Apps
+Incluyen todo lo necesario para desplegar nuestra aplicación en un ambiente en la nube.
+
+### Stack
+La unidad de despliegue en nuestro AWS CDK es llamado pila.
+
+### Constructs
+El bloque de construcción básico para aplicaciones AWS CDK. Un constructor representa un componente de nube.
+
+### Environments
+Cada instancia de pila en nuestra app AWS CDK es explícitamente o implícitamente asociada a un ambiente.
+
+
+## Patrón constructor
+
+### Nivel 1 (L1)
+Representaciones directas de recursos de CloudFormation. Debe proveer todos los atributos requeridos de CloudFormation. Son nombradas CfnXyz.
+
+### Nivel 2 (L2)
+Representa un recurso en la nube en particular. Bucket S3 por ejemplo. No tenemos que configurar cada atributo. Es de alto nivel. La clase s3.Bucket representa un Amazon S3, tal como such as bucket.addLifeCycleRule().
+
+### Nivel 3 (L3)
+Representa un grupo de recursos en la nube que trabajan juntos para cumplir con una tarea en particular. Podemos crear un balanceador de carga ApplicationLoadBalancedFargateService. Constructores de alto nivel, los cuales llamamos patrones de llamado.
+
+Para ver ejemplos oficiales de implementaciones con AWS CDK podemos ingresar en el siguiente [link](https://github.com/cdk-patterns/serverless).
