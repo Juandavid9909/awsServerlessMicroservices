@@ -205,9 +205,10 @@ npm install -g aws-cdk
 cdk init app --language=typescript
 ```
 
+
 ## Comandos útiles
 
-- `npm run build` compila typescript en js.
+- `npm run build` compila TypeScript en JS.
 - `npm run watch` observa los cambios y compila.
 - `npm run test` realiza las pruebas unitarias de jest.
 - `cdk deployment` implementa esta pila en tu cuenta/región de AWS predeterminada.
