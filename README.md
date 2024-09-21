@@ -190,3 +190,23 @@ Representa un recurso en la nube en particular. Bucket S3 por ejemplo. No tenemo
 Representa un grupo de recursos en la nube que trabajan juntos para cumplir con una tarea en particular. Podemos crear un balanceador de carga ApplicationLoadBalancedFargateService. Constructores de alto nivel, los cuales llamamos patrones de llamado.
 
 Para ver ejemplos oficiales de implementaciones con AWS CDK podemos ingresar en el siguiente [link](https://github.com/cdk-patterns/serverless).
+
+
+## Iniciar proyecto CDK
+
+```bash
+npm install -g aws-cdk
+
+cdk init app --language typescript
+```
+
+
+## Comandos útiles
+
+- `npm run build` compila typescript en js.
+- `npm run watch` observa los cambios y compila.
+- `npm run test` realiza las pruebas unitarias de jest.
+- `cdk deployment` implementa esta pila en tu cuenta/región de AWS predeterminada.
+- `cdk diff` compara la pila implementada con el estado actual.
+- `cdk synth` emite la plantilla CloudFormation sintetizada.
+- `cdk destroy` para eliminar todos nuestros recursos.
