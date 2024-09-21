@@ -197,9 +197,8 @@ Para ver ejemplos oficiales de implementaciones con AWS CDK podemos ingresar en 
 ```bash
 npm install -g aws-cdk
 
-cdk init app --language typescript
+cdk init app --language=typescript
 ```
-
 
 ## Comandos útiles
 
