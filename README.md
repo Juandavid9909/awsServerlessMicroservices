@@ -1,3 +1,8 @@
+# Arquitectura
+
+![architecture](https://github.com/user-attachments/assets/e322ff62-6eae-4afc-8c58-ce050ff78505)
+
+
 # ¿Qué es monorepo?
 
 - Una estrategia de desarrollo de software donde muchos proyectos de código son almacenados en el mismo repositorio.
