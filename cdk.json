@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/aws_serverless_microservices.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/aws_microservices.ts",
   "watch": {
     "include": [
       "**"

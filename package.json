@@ -1,8 +1,8 @@
 {
-  "name": "aws_serverless_microservices",
+  "name": "aws_microservices",
   "version": "0.1.0",
   "bin": {
-    "aws_serverless_microservices": "bin/aws_serverless_microservices.js"
+    "aws_microservices": "bin/aws_microservices.js"
   },
   "scripts": {
     "build": "tsc",

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { AwsServerlessMicroservicesStack } from '../lib/aws_serverless_microservices-stack';
+import { AwsMicroservicesStack } from '../lib/aws_microservices-stack';
 
 const app = new cdk.App();
-new AwsServerlessMicroservicesStack(app, 'AwsServerlessMicroservicesStack', {
+new AwsMicroservicesStack(app, 'AwsMicroservicesStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
