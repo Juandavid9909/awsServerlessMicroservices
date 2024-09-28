@@ -1,8 +1,8 @@
 import { AttributeType, BillingMode, Table } from "aws-cdk-lib/aws-dynamodb";
-import { Code, Function, Runtime } from "aws-cdk-lib/aws-lambda";
 import { Construct } from "constructs";
-import { join } from "path";
+import { NodejsFunction, NodejsFunctionProps } from "aws-cdk-lib/aws-lambda-nodejs";
 import { RemovalPolicy, Stack, StackProps } from "aws-cdk-lib";
+import { Runtime } from "aws-cdk-lib/aws-lambda";
 
 export class AwsMicroservicesStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -18,10 +18,21 @@ export class AwsMicroservicesStack extends Stack {
       billingMode: BillingMode.PAY_PER_REQUEST
     });
 
-    const fn = new Function(this, "MyFunction", {
-      runtime: Runtime.NODEJS_12_X,
-      handler: "index.handler",
-      code: Code.fromAsset(join(__dirname, "lambda-handler"))
+    const nodeJsFunctionProps: NodejsFunctionProps = {
+      bundling: {
+        externalModules: [
+          "aws-sdk"
+        ]
+      },
+      environment: {
+        PRIMARY_KEY: "id",
+        DYNAMODB_TABLE_NAME: productTable.tableName
+      },
+      runtime: Runtime.NODEJS_18_X
+    };
+
+    const productFunction = new NodejsFunction(this, "productLambdaFunction", {
+    
     });
   }
 }
