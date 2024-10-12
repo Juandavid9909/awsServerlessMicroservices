@@ -215,3 +215,19 @@ cdk init app --language=typescript
 - `cdk diff` compara la pila implementada con el estado actual.
 - `cdk synth` emite la plantilla CloudFormation sintetizada.
 - `cdk destroy` para eliminar todos nuestros recursos.
+
+> [!NOTE]
+> Comandos para desplegar con AWS CDK
+```bash
+# Comandos para despliegue
+cdk synth
+cdk diff
+cdk deploy
+```
+
+> [!IMPORTANT]
+> Comandos para eliminar los recursos creados con CDK
+
+```bash
+cdk destroy
+```
