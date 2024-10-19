@@ -150,6 +150,57 @@ callback(Error error, Object result);
 - Costo reducido, ya que permite tener máquinas virtuales administradas de forma programada.
 
 
+# EventBridge
+
+- Es un bus de eventos Serverless para servicios de AWS.
+- Podemos construir aplicaciones manejadas por eventos a escala utilizando los eventos generados desde nuestras aplicaciones.
+- Usado para conectar nuestras aplicaciones con datos desde una gran cantidad de fuentes, aplicaciones SaaS integradas.
+- Servicios de AWS como objetivos, tales como funciones Lambda de AWS.
+- Formalmente llamados Amazon CloudWatch Events.
+
+
+## Ventajas
+
+- **Construir arquitecturas basadas en eventos:** Con EventBridge, nuestros destinatarios de eventos no necesitan preocuparse por las fuentes eventos, porque podemos filtrar y publicar directamente a EventBridge. Mejora la habilidad de desarrollo así como la resiliencia de la aplicación con con arquitecturas impulsadas por eventos acopladas de forma flexible.
+- **Conexión con aplicaciones SaaS:** EventBridge ingiere datos de aplicaciones SaaS compatibles y los envía a servicios de AWS y destinos SaaS. Aplicaciones SaaS para activar flujos de trabajo para atención al cliente y operaciones comerciales.
+- **Escribir menos código personalizado:** Puede ingerir, filtrar, transformar y entregar eventos sin escribir código personalizado. El registro de esquemas de EventBridge almacena una colección de esquemas de eventos fáciles de encontrar.
+- **Reducir los gastos operativos:** No hay servidores que aprovisionar, parchar ni administrar. Escala automáticamente en función de la cantidad de eventos ingresados. Disponibilidad distribuida y tolerancia a fallas integradas. Capacidad nativa de reproducción y archivo de eventos.
+
+
+## Conceptos clave
+
+### Amazon EventBridge Events
+Un evento indica un cambio en un ambiente tal como un ambiente de AWS o un servicio SaaS asociado. Los eventos son representados como objetos JSON y todos tienen una estructura similar, y los mismos campos de nivel superior.
+
+```json
+{
+	"version": "0",
+	"id": "guid",
+	"detail-type": "EC2 Instance State-change Notification",
+	"source": "aws.ec2",
+	"account": "111122223333",
+	"time": "2017-12-22T18:43:48Z",
+	"region": "us-west-1",
+	"resources": [
+		"arn:aws:ec2:us-west-1:123456789012:instance/i-1234567890abcdef0"
+	],
+	"detail": {
+		"instance-id": "i-123456789abcdef0",
+		"state": "terminated"
+	}
+}
+```
+
+### Amazon EventBridge Rules
+Una regla hace coincidir los eventos entrantes y los envía a los destinos para su procesamiento. Una sola regla puede enviar un evento a varios destinos, que luego se ejecutan en paralelo. Un patrón de evento define la estructura del evento y los campos con los que coincide una regla.
+
+### Amazon EventBridge Targets
+Un destino es un recurso o punto final al que EventBridge envía un evento cuando este coincide con el patrón de eventos definido para una regla. La regla procesa los datos del evento y envía la información relevante al destino.
+
+### Amazon EventBrige Event Buses
+Un bus de eventos es una canalización que recibe eventos. Las reglas asociadas con el bus de eventos evalúan los eventos a medida que llegan. Una política basada en recursos especifica qué eventos se deben permitir y qué entidades tienen permiso para crear o modificar reglas u objetivos para un evento.
+
+
 # CloudFormation
 
 - Modela, provisiona y administra recursos AWS usando IaC.
