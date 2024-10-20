@@ -4,3 +4,6 @@
 [submodule "src/basket"]
 	path = src/basket
 	url = https://github.com/Juandavid9909/awsServerlessMicroservicesBasket.git
+[submodule "src/ordering"]
+	path = src/ordering
+	url = https://github.com/Juandavid9909/awsServerlessMicroservicesOrdering.git

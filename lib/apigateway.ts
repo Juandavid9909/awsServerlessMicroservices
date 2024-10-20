@@ -5,6 +5,7 @@ import { LambdaRestApi } from "aws-cdk-lib/aws-apigateway";
 interface SwnApiGatewayProps {
     productMicroservice: IFunction;
     basketMicroservice: IFunction;
+    orderingMicroservice: IFunction;
 };
 
 export class SwnApiGateway extends Construct {
@@ -13,6 +14,7 @@ export class SwnApiGateway extends Construct {
 
         this.createProductApi(props.productMicroservice);
         this.createBasketApi(props.basketMicroservice);
+        this.createOrderApi(props.orderingMicroservice);
     }
 
     private createProductApi(productMicroservice: IFunction) {
@@ -54,5 +56,23 @@ export class SwnApiGateway extends Construct {
         const basketCheckout = basket.addResource("checkout"); // /basket/checkout
 
         basketCheckout.addMethod("POST"); // POST /basket/checkout
+    }
+
+    private createOrderApi(orderingMicroservice: IFunction) {
+        const apigw = new LambdaRestApi(this, "orderApi", {
+            restApiName: "Order Service",
+            handler: orderingMicroservice,
+            proxy: false
+        });
+
+        const order = apigw.root.addResource("order");
+
+        order.addMethod("GET");
+
+        const singleOrder = order.addResource("{userName}");
+
+        singleOrder.addMethod("GET");
+
+        return singleOrder;
     }
 }
