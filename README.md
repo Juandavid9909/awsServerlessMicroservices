@@ -200,6 +200,11 @@ Un destino es un recurso o punto final al que EventBridge envía un evento cuand
 ### Amazon EventBrige Event Buses
 Un bus de eventos es una canalización que recibe eventos. Las reglas asociadas con el bus de eventos evalúan los eventos a medida que llegan. Una política basada en recursos especifica qué eventos se deben permitir y qué entidades tienen permiso para crear o modificar reglas u objetivos para un evento.
 
+```bash
+# Ejecutar evento de EventBridge con archivo JSON
+aws events put-events --entries file://checkoutbasketevents.json
+```
+
 
 # CloudFormation
 
