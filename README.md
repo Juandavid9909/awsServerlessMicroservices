@@ -206,6 +206,27 @@ aws events put-events --entries file://checkoutbasketevents.json
 ```
 
 
+# SQS
+
+- Amazon SQS significa Simple Queue Service y son colas de mensajes totalmente administradas para microservicios, sistemas distribuidos y aplicaciones sin servidor.
+- Nos permite desacoplar y escalar microservicios, sistemas distribuidos y aplicaciones sin servidor.
+- Elimina la complejidad y la sobrecarga asociadas con la gestión y operación de middleware orientado a mensajes.
+- Envía, almacena y recibe mensajes entre los componentes de software a cualquier volumen.
+- Hay 2 tipos de colas de mensajes:
+	- Las colas estándar ofrecen máximo rendimiento, pedidos con el mejor esfuerzo y entrega al menos una vez.
+	- Las colas FIFO están diseñadas para garantizar que los mensajes se procesen exactamente una vez, en el orden exacto en que se envían.
+- Integrar y desacoplar sistemas y componentes de software distribuidos.
+- Proporciona una API de servicios web genérica a la que puede acceder mediante cualquier lenguaje de programación compatible con el SDK de AWS.
+
+
+## Ventajas
+
+- **Eliminar la sobrecarga administrativa:** AWS administra todas las operaciones en curso y la infraestructura subyacente necesarias para proporcionar un servicio de colas de mensajes altamente disponible y escalable. Las colas de SQS se crean de forma dinámica y se escalan automáticamente.
+- **La durabilidad y la confiabilidad transmiten mensajes:** Amazon SQS los almacena en varios servidores. Las colas estándar admiten la entrega de mensajes al menos una vez, y las colas FIFO admiten el procesamiento de mensajes exactamente una vez. SQS bloquea los mensajes durante el procesamiento, de modo que varios productores puedan enviar y varios consumidores puedan recibir mensajes al mismo tiempo.
+- **Escalabilidad, disponibilidad y rentabilidad:** SQS se escala de forma elástica con nuestra aplicación, por lo que no tenemos que preocuparnos por la planificación de la capacidad ni por el aprovisionamiento previo. No hay límite para la cantidad de mensajes por cola y las colas estándar brindan un rendimiento casi ilimitado.
+- **Seguridad - mantenga seguros los datos confidenciales:** Amazon SQS intercambia datos confidenciales entre aplicaciones mediante el cifrado del lado del servidor (SSE) para cifrar cada cuerpo del mensaje.
+
+
 # CloudFormation
 
 - Modela, provisiona y administra recursos AWS usando IaC.
